@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Animation</title>
+        <style type="text/css">
+        body
+        {
+            background-color: #000000;
+        }
+        .circle
+        {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #000000;
+            position: absolute;
+            border-radius: 50px;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <script>
+            document.onmousemove = circles;
+
+            var colors=['#ccc','#6cf','#eba13a']
+            function circles (event)
+            {
+                var circle = document.createElement("div")
+                circle.setAttribute("class","circle")
+                document.body.appendChild(circle)
+                circle.style.left = event.clientX + 'px'
+                circle.style.top = event.clientY + 'px'
+
+                var color = colors[1]
+                circle.style.borderColor=color
+                circle.style.transition = "all 0.5s linear 0s"
+                circle.style.left = circle.offsetLeft -20 + 'px'
+                circle.style.top = circle.offsetTop -20 + 'px'
+                circle.style.width="60px"
+                circle.style.height="60px"
+                circle.style.borderWidth="5px"
+                circle.style.opacity = 0
+            }
+        </script>
+    </body>
+</html>
