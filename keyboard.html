@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Rain</title>
+        <style>
+        
+        </style>
+    </head>
+    <body>
+        <script>
+            document.onkeypress = animateKeys;
+            function animateKeys (event)
+            {
+                var keycode = event.keycode
+                var c = String.fromCharCode(keycode)
+
+                var key = document.createElement("div")
+
+                document.body.appendChild(key)
+
+                key.style.position = "absolute"
+
+                var randX = Math.round(Math.random() * window.innerWidth)
+                var randY = Math.round(Math.random() * window.innerHeight)
+
+                key.style.left = randX + 'px';
+                key.style.top = randY + 'px';
+
+                
+                key.innerText = c
+            }
+        </script>
+    </body>
+</html>
